@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>em vs rem</title>
+
+    <style>
+
+        :root { /* rem unit is relative on the root font size; any elem w rem uses this font size */
+            font-size: 10px;
+        }
+
+        body{
+            /*increase body fontsize from default 16px*/
+            font-size: 12px; 
+        }
+
+        .container {
+            border: 2px dashed #8dd;
+            background-color: #eff;
+            font-size: 25px;
+        }
+
+        h1{
+            /*setting h1 font size in px overrides/cancels its 2em relation to body font size, h1 will now ignore any changes to body font-size*/
+            font-size: 2.5rem;
+            border: 0.1em solid #aaa;
+            padding: 1.25em;
+            width: 50%;
+            margin: 2em auto;
+            /* em will take its units from its parent. will only take FONT-SIZE px*/
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>h1 default font size is 2em</h1>
+        <h2>h2 default font size is 1.5em</h2>
+        <h3>h3 default font size is 1.7em</h3>
+        <p>p default font size is 1em</p>
+        <p>1em equals the font size of nearest parent that has a font size set</p>
+    </div>
+
+</body>
+</html>

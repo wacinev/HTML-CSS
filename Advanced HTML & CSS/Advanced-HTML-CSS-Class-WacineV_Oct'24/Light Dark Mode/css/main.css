@@ -1,0 +1,173 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+html {
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+:root {
+	--font-primary: "Abel", sans-serif;
+	--font-secondary: "Rancho", sans-serif;
+	--text-color-primary: #555;
+	--background-color-primary: #fff;
+	--background-color-subtle: #e9d8c8;
+}
+body {
+	font-family: var(--font-primary);
+	font-size: 19px;
+	color: var(--text-color-primary);
+	background: var(--background-color-primary);
+	margin: 0;
+}
+img {
+	max-width: 100%;
+	vertical-align: bottom;
+}
+h1 {
+	font-family: var(--font-secondary);
+	font-size: 95px;
+	line-height: 85px;
+	font-weight: 400;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+h2 {
+	font-size: 28px;
+	border-bottom: 1px solid #d17e32;
+	padding-bottom: 10px;
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+p {
+	line-height: 32px;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+.wrapper {
+	max-width: 1280px;
+	margin: auto;
+}
+.button {
+	background-color: #8842c2;
+	color: #fff;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-right: 12px;
+	padding-left: 12px;
+	border-radius: 4px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.call-to-action {
+	text-align: center;
+	margin-bottom: 60px;
+}
+header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 20px;
+	/* border: 5px dashed coral; */
+}
+.logo {
+	
+	width: 105px;
+	/* border: 5px dashed lime; */
+	padding: 0;
+	margin: 0;
+}
+nav {
+	margin-left: auto;
+	/* border: 5px dashed pink; */
+	/* padding: 6px; */
+}
+nav ul {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	/* border: 5px dashed aqua; */
+}
+nav li {
+	list-style-type: none;
+	/* justify-content: flex-start; */
+	/* align-items: flex-start; */
+	margin-left: 10px;
+	/* border: 5px dashed rgb(255, 0, 0); */
+}
+nav a {
+	color: var(--text-color-primary);
+	text-decoration: none;
+	font-size: 17px;
+	text-transform: uppercase;
+}
+
+.hero {
+	position: relative;
+	text-align: center;
+	padding: 15%;
+	color: #fff;
+	background-color: #520;
+	background-image: url(../img/hero.jpg);
+	background-position: center 75%;
+	background-size: cover;
+}
+
+.hero div{
+	position: absolute; 
+	top:10px;
+	right:10px;
+}
+
+#dark-light-cb:checked {
+	--text-color-primary: #ddd;
+	--background-color-primary: #26150d;
+	--background-color-subtle: #4c3125;
+}
+
+.hero p {
+	text-transform: uppercase;
+	margin: 0;
+}
+main {
+	max-width: 850px;
+	padding: 25px;
+	margin: auto;
+}
+footer {
+	background-color: var(--background-color-subtle);
+	padding: 20px;
+}
+footer .wrapper {
+	display: flex;
+	align-items: center;
+}
+footer p {
+	margin: 0;
+	font-size: 15px;
+}
+.social {
+	margin-left: auto;
+}
+.social a {
+	text-decoration: none;
+	margin-left: 10px;
+	opacity: .6;
+}
+
+/* if prefers-color-scheme is set to dark in the Browser Inspector Styles Paintbrush, this media query styles will be used */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text-color-primary: #ddd;
+		--background-color-primary: #26150d;
+		--background-color-subtle: #4c3125;
+	}
+
+	.hero {
+		border: 1px solid var(--background-color-subtle);
+	}
+
+
+}

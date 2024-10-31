@@ -1,0 +1,239 @@
+*, *::after, *::before{/*invlude paddiing and borfer in width of box along with actual content; changing padding/border does NOT change overall width of box*/
+    box-sizing: border-box;
+}
+
+body{
+    /* margin: 20px; */
+    background-color: #555555;
+    /* background-image: repeating-linear-gradient(30deg, transparent 0px,transparent 20px, #00000033 20px, #5f66d833 40px);
+    background-attachment: fixed; background gradient does not move */
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.2;
+}
+
+h1, h2, h3 {
+    font-family: "Alfa Slab One", "Open Sans", sans-serif;
+    font-weight: normal;
+    /* line-height: 1.2; */
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding-bottom: 15px;
+    /* background-image: linear-gradient(rgb(255, 255, 255),#5f66d844); */
+    /* background-clip: text;
+    -webkit-background-clip: text; */
+    color: #fff;
+}
+
+header p {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-top: 60px;
+}
+h3 {
+    font-size: 24px;
+    background-color: #2fb3f2;
+    color: #fff;
+    padding: 15px;
+    margin-top: 0;
+}
+
+h3 + p { /* target 1st sibling p tag after any h3 */
+    font-weight: 700;
+    font-style: italic;
+    opacity: .5;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* text-align: center; */
+    /* border: 3px dashed lime; */
+    /* margin-bottom: 20px; */
+    height: 165px;
+    padding: 15px;
+}
+
+/* attribute selector symbols:
+href= means href equals: a[href = "my-website.com"]
+href ^= means starts with ex. a[href ^= "http"]
+href $= means ends with ex a[href $= ".pdf"]
+href *= means contains ex a[href *= 'youtube.com"]
+use these to target 3 differnet a tags by attribute */
+
+a[href^="http"]{
+    background-image: url(../img/icon-external-link.svg);
+    background-position: right center;
+    padding-right: 30px;
+    background-size: 24px;
+}
+
+a[href*="youtube"]{
+    background-image: url(../img/icon-youtube.svg);
+    background-position: right center;
+    padding-right: 30px;
+    background-size: 24px;
+}
+
+a[href$="pdf"]{
+    background-image: url(../img/icon-pdf.png);
+    background-position: right center;
+    padding-right: 30px;
+    background-size: 24px;
+}
+
+a {
+    /* background-image: url(../img/icon-pdf.png); */
+    background-repeat: no-repeat;
+}
+
+header, main, footer{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 0 30px 0;
+    height: 50vh;
+    min-height: 200px;
+    background-image: url(../img/masthead-darkened.jpg);
+    background-position: center center;
+    color: #fff;
+    padding: 50px 20px;
+    background-size: cover; /* displays entire image across one dimension without distorting image; this requires cropping of the other dimension */
+}
+
+nav img {
+    width: 165px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    /* font-size: 13px; */
+}
+
+nav ul {
+    list-style-type: none; /*remove bullet points*/
+    /* flex-grow: 1;flex grow 1 tells the element to grow to take up any free space within its flex parent container */
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    /* border: 3px dashed pink; */
+}
+
+/* nav li {
+    display: inline;
+} */
+
+nav ul a {
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 8px;
+    display: inline-block;
+}
+
+nav ul a:hover, nav ul a:focus {
+   color: #97d0f2;
+}
+
+section{
+    /* border: 4px solid aqua; */
+    margin-bottom: 30px;
+    /* padding: 20px; */
+}
+
+section{
+    background-color: #fff;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+section p{
+    margin: 15px;
+}
+
+/* .button-secondary::before { */
+.button-secondary::after {
+    content: " »" /* option + shift + backslash for that character*/
+}
+
+/* .button-secondary img {
+    vertical-align: baseline;
+    margin-left: 5px;
+    stroke: currentColor;
+} */
+
+
+footer{
+    color: #bbb;
+    text-align: center;
+    font-weight: 300;
+}
+
+/* mediaQueries for desktop/laptop (bigger screen) view*/
+@media (min-width: 600px) {
+    
+    body {
+        /* background-color: coral; */
+        margin-top: 100px;
+        /* background-image:linear-gradient(#555 0px, #555 90px,transparent 90px), repeating-linear-gradient(30deg, transparent 0px,transparent 20px, #00000033 20px, #5f66d833 40px); */
+    }
+
+    nav {
+        background-color: #000;
+        flex-direction: row;
+        height: 90px;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        /* background: rgba(0,0,0, .5); */
+    }
+
+    nav ul {
+        justify-content: flex-end;
+        width: auto; /* auto =min width*/
+    }
+
+    nav li {
+        /* add space between nav links */
+        margin-left: 20px;
+    }
+
+}
+
+@media (min-width: 600px) and (min-height: 750px){
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
